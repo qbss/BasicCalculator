@@ -86,7 +86,7 @@ Button(root, text="/", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="
 Button(root, text="=", width=10, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: calculate()).place(x=300, y=500)
 Button(root, text="%", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: percent()).place(x=150, y=100)
 Button(root, text=".", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show(".")).place(x=150, y=500)
-Button(root, text="sqrt", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: sqrt()).place(x=290, y=100)
+Button(root, text="√", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: sqrt()).place(x=290, y=100)
 
 
 # Button(root, text="(", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5").place(x=290, y=100)

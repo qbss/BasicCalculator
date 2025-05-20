@@ -1,3 +1,3 @@
-![image](https://github.com/user-attachments/assets/1946259c-1a26-47b1-88f9-539f36ff6c93)
+![image](https://github.com/user-attachments/assets/7084f098-3281-4371-b8f8-9755fe8464d7)
 
 Basic calculator

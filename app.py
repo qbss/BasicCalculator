@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import *
+import math
 
 root=Tk()
 root.title("Basic Calculator")
@@ -21,6 +22,38 @@ def clear():
     equation = ""
     Label_result.config(text=equation)
 
+def calculate():
+    global equation
+    result =""
+    if equation !="":
+        try:
+            result = eval(equation)
+            # Only show decimal if needed
+            if isinstance(result, float) and result.is_integer():
+                result = int(result)        
+
+        except:
+            result = "Error"
+            equation = ""
+
+    Label_result.config(text=result)
+
+def sqrt():
+    global equation
+    try:
+        # Evaluate the current equation and take the square root
+        result = math.sqrt(float(eval(equation)))
+        # Only show decimal if needed
+        if result.is_integer():
+            result = int(result)    
+        equation = str(result)
+        Label_result.config(text=equation)
+    except:
+        Label_result.config(text="Error")
+        equation = ""
+
+        
+
 Label_result=Label(root,width=25,height=2,text="",font=("arial",30))
 Label_result.pack()
 
@@ -39,10 +72,10 @@ Button(root, text="+", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="
 Button(root, text="-", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show("-")).place(x=430, y=200)
 Button(root, text="*", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show("*")).place(x=430, y=300)
 Button(root, text="/", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show("/")).place(x=430, y=400)
-Button(root, text="=", width=10, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show("=")).place(x=300, y=500)
+Button(root, text="=", width=10, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: calculate()).place(x=300, y=500)
 Button(root, text="%", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show("%")).place(x=150, y=100)
 Button(root, text=".", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show(".")).place(x=150, y=500)
-Button(root, text="sqrt", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: show("sqrt")).place(x=290, y=100)
+Button(root, text="sqrt", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5", command=lambda: sqrt()).place(x=290, y=100)
 
 
 # Button(root, text="(", width=5, height=1, font=("arial", 30, "bold"), bd=1, fg="#fff", bg="#3697f5").place(x=290, y=100)
